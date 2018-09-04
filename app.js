@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.use("/temperatures", tempRoutes);
+app.use("/", tempRoutes);
 
 app.use((req, res, next) => {
   const error = new Error("Not found");
