@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,5 +19,13 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarlenaFlueh/raspi-temperature-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarlenaFlueh/raspi-temperature-backend/issues"
+  },
+  "homepage": "https://github.com/MarlenaFlueh/raspi-temperature-backend#readme"
 }
