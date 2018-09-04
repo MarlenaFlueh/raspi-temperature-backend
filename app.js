@@ -8,7 +8,9 @@ const tempRoutes = require("./api/routes/temperatures");
 const app = express();
 
 mongoose.connect(
-  "mongodb+srv://agent007:agent007@temperature-3ohyc.mongodb.net/test?retryWrites=true",
+  "mongodb+srv://agent007:" +
+    process.env.MONGO_ATLAS_PW +
+    "@temperature-3ohyc.mongodb.net/test?retryWrites=true",
   {
     useNewUrlParser: true
   }
