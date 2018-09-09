@@ -5,16 +5,14 @@ const tweeds = temperature => [
     temperature >= 26 ? "It's so hot today." : cold(temperature)
   }`,
   `Hello again! We have ${temperature} degrees in Lüneburg uwu.`,
-  `Now we've got ${temperature}° celsius.`,
+  `Now we've got ${temperature} °C.`,
   `In Lüneburg, north of Germany, temperatures are ${temperature} degrees celsius.`,
-  `What a wonderful day, we've got ${temperature}° celsius. ${cold(
-    temperature
-  )}`,
+  `What a wonderful day, we've got ${temperature} °C. ${cold(temperature)}`,
   `Currently, we've got ${temperature} degrees celsius.`,
   `${temperature} degrees celsius today. ${cold()}`,
   `Cold or hot? I feel good with ${temperature} degrees celsius.`,
   `${temperature} degrees celsius.`,
-  `${temperature}° celsius.`
+  `${temperature} °C.`
 ];
 
 module.exports = tweeds;
