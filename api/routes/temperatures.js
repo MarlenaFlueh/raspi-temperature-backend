@@ -3,6 +3,7 @@ require("dotenv").config();
 const Twit = require("twit");
 
 const Temperature = require("../model/temperature");
+const tweeds = require("../../utils/tweeds");
 
 const router = express.Router();
 const T = new Twit({
@@ -43,9 +44,7 @@ router.post("/", async (req, res) => {
     T.post(
       "statuses/update",
       {
-        status: `Temperatures are around ${
-          result.temp
-        } degrees celsius in Lüneburg, Germany.`
+        status: `${tweeds(result.temp)[Math.round(Math.random() * 10)]}`
       },
       (error, data, response) => {
         console.log(data);
