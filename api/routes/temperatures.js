@@ -1,8 +1,17 @@
 const express = require("express");
+require("dotenv").config();
+const Twit = require("twit");
 
 const Temperature = require("../model/temperature");
 
 const router = express.Router();
+const T = new Twit({
+  consumer_key: process.env.consumer_key,
+  consumer_secret: process.env.consumer_secret,
+  access_token: process.env.access_token,
+  access_token_secret: process.env.access_token_secret,
+  timeout_ms: 60 * 1000
+});
 
 router.delete("/", async (req, res, next) => {
   try {
@@ -31,6 +40,17 @@ router.post("/", async (req, res) => {
         temp: result.temp
       }
     });
+    T.post(
+      "statuses/update",
+      {
+        status: `Temperatures are around ${
+          result.temp
+        } degrees celsius in Lüneburg, Germany.`
+      },
+      (error, data, response) => {
+        console.log(data);
+      }
+    );
   } catch (error) {
     res.status(500).json({ error });
   }
