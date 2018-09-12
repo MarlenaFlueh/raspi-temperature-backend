@@ -34,6 +34,10 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const result = await Temperature.create({ temp: req.body.temp });
+    const oldTemperature = await Temperature.find();
+    if (oldTemperature.length > 5) {
+      await Temperature.findByIdAndRemove(oldTemperature[0]._id);
+    }
     res.json({
       message: "success created!",
       createdTemperatures: {
